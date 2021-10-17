@@ -1,28 +1,29 @@
-import { ExpandedTab, ParsedContent } from "../types";
+import { useHistory, useRouteMatch } from "react-router";
+import { ParsedContent } from "../types";
 
 type FeedsContainerRowProps = {
   feedContent: ParsedContent;
-  expandedTab: ExpandedTab;
-  toggleExpandedTab(tabLink: string): void;
+  routeVal: string;
+  toggleExpandedTab(currUrl: string | undefined): void;
 };
 
 export default function FeedsContainerRow({
   feedContent: { contentInfo, contentItems },
-  expandedTab,
+  routeVal,
   toggleExpandedTab,
 }: FeedsContainerRowProps) {
-  // const isCurrentTab = expandedTab === contentInfo.link;
-  console.log(expandedTab);
+  const match = useRouteMatch("/feeds/:feedId");
+  const { push } = useHistory();
 
   return (
     <>
       <article class="media">
-        <div class="media-content" onClick={() => toggleExpandedTab(contentInfo?.link)}>
+        <div class="media-content" onClick={() => toggleExpandedTab(match?.url)}>
           <div class="content">
             <h2 class="title is-6">{contentInfo?.title}</h2>
             <h3 class="subtitle is-6">{contentInfo?.description}</h3>
           </div>
-          {expandedTab &&
+          {match?.url === routeVal &&
             contentItems.map(item => {
               return (
                 <article key={Math.random()} class="media">
@@ -31,7 +32,12 @@ export default function FeedsContainerRow({
                   </div>
                   <div class="media-content">
                     <div class="content">
-                      <a href={item?.link}>{item?.title}</a>
+                      <a
+                        onClick={() => {
+                          push(item?.link, { link: item?.link });
+                        }}>
+                        {item?.title}
+                      </a>
                     </div>
                   </div>
                 </article>

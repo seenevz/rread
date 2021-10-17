@@ -1,5 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
-import { ExpandedTab, FeedsList, ParsedContentList } from "../types";
+import { useHistory, useLocation, useRouteMatch } from "react-router";
+import { FeedsList, ParsedContentList } from "../types";
 import { getParsedFeedContent } from "../utils";
 import FeedsContainerRow from "./FeedsContainerRow";
 
@@ -9,36 +10,37 @@ type FeedsContainerProps = {
 
 export default function FeedsContainer({ feeds }: FeedsContainerProps) {
   const [feedsContent, setFeedsContent] = useState<ParsedContentList>([]);
-  // const [expandedTab, setExpandedTab] = useState<ExpandedTab>(null);
+  const {
+    push,
+    location: { state },
+  } = useHistory();
+  const { path, url } = useRouteMatch();
 
   useEffect(() => {
     (async (): Promise<void> => {
       const feedsStrings = await Promise.all(
         feeds.map(async feed => {
-          return await getParsedFeedContent(feed.url);
+          return await getParsedFeedContent(feed.url, feed.id);
         })
       );
       setFeedsContent(feedsStrings);
     })();
   }, [feeds]);
 
-  // const toggleExpandedTab = (tabLink: string): void => {
-  //   setExpandedTab(curr => (curr === tabLink ? null : tabLink));
-  // };
-
   return (
     <section>
       {feedsContent.map(feed => {
-        const routeVal = Date.now() * Math.random();
+        const routeVal = `${path}/${feed.id}`;
+
+        const triggerRoute = (currUrl: string) => {
+          push(routeVal === currUrl ? url : routeVal);
+        };
         return (
           <FeedsContainerRow
             key={Math.random() * Date.now()}
             feedContent={feed}
-            expandedTab={true}
-            toggleExpandedTab={() => {
-              console.log(`/feeds/${routeVal}`);
-              // window.history.pushState(null, "", `/feeds/${routeVal}`);
-            }}
+            routeVal={routeVal}
+            toggleExpandedTab={triggerRoute}
           />
         );
       })}

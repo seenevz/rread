@@ -19,6 +19,6 @@ export async function getFeedXML(url: string): Promise<string> {
   return await myFetch(url);
 }
 
-export async function getParsedFeedContent(url: string) {
-  return getDataFromXML(await getFeedXML(url));
+export async function getParsedFeedContent(url: string, id: number) {
+  return getDataFromXML(await getFeedXML(url), id);
 }

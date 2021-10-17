@@ -1,6 +1,7 @@
 export type ParsedContent = {
   contentInfo: ContentInfo;
   contentItems: ContentItemList;
+  id: number;
 };
 
 export type ParsedContentList = ParsedContent[];

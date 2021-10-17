@@ -1,7 +1,7 @@
 export default {
   feeds: [
-    { url: "https://lifehacker.com/rss" },
-    { url: "https://www.reddit.com/.rss" },
-    { url: "https://feeds.bbci.co.uk/news/rss.xml" },
+    { url: "https://lifehacker.com/rss", id: 11025 },
+    { url: "https://www.reddit.com/.rss", id: 1102 },
+    { url: "https://feeds.bbci.co.uk/news/rss.xml", id: 11025123 },
   ],
 };

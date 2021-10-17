@@ -43,7 +43,7 @@ const getContentItems = (document: Document): ContentItemList => {
   return data;
 };
 
-export const getDataFromXML = (stringDoc: string): ParsedContent => {
+export const getDataFromXML = (stringDoc: string, id: number): ParsedContent => {
   const parsed = parseXMLFromString(stringDoc);
   const contentInfo = getContentInfo(parsed);
   const contentItems = getContentItems(parsed);
@@ -51,5 +51,6 @@ export const getDataFromXML = (stringDoc: string): ParsedContent => {
   return {
     contentInfo,
     contentItems,
+    id,
   };
 };

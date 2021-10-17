@@ -1,6 +1,6 @@
 export * from "./myXMLParserTypes";
 
-export type FeedObj = { url: string };
+export type FeedObj = { url: string; id: number };
 
 export type FeedsList = FeedObj[];
 
