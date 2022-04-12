@@ -1,5 +1,6 @@
 import { Redirect, Route, Switch } from "react-router";
 import Header from "./components/Header";
+import Article from "./routes/Article";
 import Home from "./routes/Home";
 
 export function App() {
@@ -10,8 +11,8 @@ export function App() {
         <Route path="/feeds">
           <Home />
         </Route>
-        <Route path="/">
-          <Redirect to="/feeds" />
+        <Route path="/article">
+          <Article />
         </Route>
       </Switch>
     </>
