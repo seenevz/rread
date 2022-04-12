@@ -13,5 +13,9 @@ export default function Home() {
     })();
   }, []);
 
-  return <main class="section">{feeds.length ? <FeedsContainer feeds={feeds} /> : <EmptyFeed />}</main>;
+  return (
+    <main class="section">
+      {feeds.length ? <FeedsContainer feeds={feeds} /> : <EmptyFeed />}
+    </main>
+  );
 }
