@@ -1,0 +1,23 @@
+.navbar {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 3rem 1fr 3rem;
+  grid-template-rows: 2rem;
+  align-content: center;
+  place-items: center;
+  background-color: var(--primary-colour);
+}
+
+.hamburger {
+  display: block;
+  grid-column-start: 3;
+  height: 100%;
+  width: 2rem;
+}
+
+.hamburger > span  {
+    display: block;
+    height: 0.23rem;
+    background-color: black;
+    margin-top: 0.37rem;
+}

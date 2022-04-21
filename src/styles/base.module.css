@@ -1,0 +1,84 @@
+/* CSS Resets */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  line-height: 1.7;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+button {
+  background-color: unset;
+  border: none;
+  color: unset;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  font: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea {
+  border: none;
+  outline: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* CSS Globals */
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../assets/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXo.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --main-font:'Montserrat', sans-serif;
+  --primary-colour: #02abb0;
+  /* --main-background: rgb() */
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: 18px;
+}
+/* Main Layout */
+
+#app {
+  display: grid;
+  grid-template-rows: 3rem 1fr;
+  height: 100vh;
+}

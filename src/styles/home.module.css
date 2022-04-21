@@ -1,0 +1,11 @@
+.home {
+  overflow-y: scroll;
+  padding: 1rem;
+}
+
+.emptyFeed {
+  composes: home;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
