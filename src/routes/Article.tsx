@@ -1,18 +1,26 @@
 import { useEffect, useRef, useState } from "preact/hooks";
-import { getSiteData, myFetch } from "../utils";
+import { useHistory } from "react-router-dom";
+import { getSiteData } from "../utils";
 
 type ArticleProps = {};
 const parser = new DOMParser();
 
 export default function Article({}: ArticleProps) {
   const ref = useRef<HTMLDivElement>();
+  const {
+    location: { state },
+  }: { location: { state: any } } = useHistory();
+
   const [doc, setDoc] = useState<Document | null>(null);
 
   useEffect(() => {
-    getSiteData("https://www.bbc.co.uk").then(data => {
-      setDoc(parser.parseFromString(data, "text/html"));
-    });
-  }, []);
+    console.log(state);
+    if (state.link) {
+      getSiteData(state.link).then(data => {
+        setDoc(parser.parseFromString(data, "text/html"));
+      });
+    }
+  }, [state.link]);
 
   useEffect(() => {
     if (ref.current && doc) {

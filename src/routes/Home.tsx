@@ -3,6 +3,7 @@ import EmptyFeed from "../components/EmptyFeed";
 import FeedsContainer from "../components/FeedsContainer";
 import { FeedsList } from "../types";
 import { getFeeds } from "../utils";
+import { home } from "../styles/home.module.css";
 
 export default function Home() {
   const [feeds, setFeeds] = useState<FeedsList>([]);
@@ -13,9 +14,5 @@ export default function Home() {
     })();
   }, []);
 
-  return (
-    <main class="section">
-      {feeds.length ? <FeedsContainer feeds={feeds} /> : <EmptyFeed />}
-    </main>
-  );
+  return <>{feeds.length ? <FeedsContainer feeds={feeds} /> : <EmptyFeed />}</>;
 }

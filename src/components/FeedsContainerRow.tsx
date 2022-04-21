@@ -1,4 +1,9 @@
 import { useHistory, useRouteMatch } from "react-router";
+import {
+  media,
+  mediaRow,
+  mediaTitle,
+} from "../styles/feedContainer.module.css";
 import { ParsedContent } from "../types";
 
 type FeedsContainerRowProps = {
@@ -17,34 +22,35 @@ export default function FeedsContainerRow({
 
   return (
     <>
-      <article class="media">
-        <div class="media-content" onClick={() => toggleExpandedTab(match?.url)}>
-          <div class="content">
-            <h2 class="title is-6">{contentInfo?.title}</h2>
-            <h3 class="subtitle is-6">{contentInfo?.description}</h3>
-          </div>
+      <section class={media} onClick={() => toggleExpandedTab(match?.url)}>
+        <div class={mediaTitle}>
+          <h2>{contentInfo?.title}</h2>
+          <h3>{contentInfo?.description}</h3>
+        </div>
+        <ul>
           {match?.url === routeVal &&
             contentItems.map(item => {
               return (
-                <article key={Math.random()} class="media">
-                  <div class="media-left">
-                    <p class="image is-16x16"></p>
-                  </div>
-                  <div class="media-content">
-                    <div class="content">
+                <li>
+                  <article key={Math.random()} class={mediaRow}>
+                    <div class="media-left">
+                      <p class="image is-16x16"></p>
+                    </div>
+                    <div>
                       <a
-                        onClick={() => {
-                          push(item?.link, { link: item?.link });
+                        onClick={e => {
+                          e.stopImmediatePropagation();
+                          push("/article", { link: item?.link });
                         }}>
                         {item?.title}
                       </a>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </li>
               );
             })}
-        </div>
-      </article>
+        </ul>
+      </section>
     </>
   );
 }
