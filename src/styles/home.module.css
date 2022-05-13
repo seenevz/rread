@@ -13,3 +13,21 @@
   justify-items: center;
   align-content: center;
 }
+
+.addFeed {
+  composes: home;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+ place-items: center;
+}
+
+.addForm {
+  height: max-content;
+  text-align: center;
+}
+
+input {
+  display: block;
+  border: 1px solid black;
+}
