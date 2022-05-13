@@ -38,6 +38,7 @@
   width: 0;
   background-color: var(--primary-colour);
   transition: all .5s;
+  z-index: 2;
 }
 
 .aside > ul {
