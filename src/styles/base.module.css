@@ -68,12 +68,10 @@ img {
 :root {
   --main-font:'Montserrat', sans-serif;
   --primary-colour: #02abb0;
-  /* --main-background: rgb() */
 }
 
 body {
   font-family: var(--main-font);
-  font-size: 18px;
 }
 /* Main Layout */
 
@@ -81,4 +79,5 @@ body {
   display: grid;
   grid-template-rows: 3rem 1fr;
   height: 100vh;
+  overflow: hidden;
 }
