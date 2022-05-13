@@ -14,6 +14,9 @@ export function App() {
         <Route path="/article">
           <Article />
         </Route>
+        <Route path="/">
+          <Redirect to="/feeds" />
+        </Route>
       </Switch>
     </>
   );
