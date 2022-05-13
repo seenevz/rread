@@ -1,7 +1,7 @@
 import { Redirect, Route, Switch } from "react-router";
 import Header from "./components/Header";
 import Article from "./routes/Article";
-import Home from "./routes/Home";
+import Feeds from "./routes/Feeds";
 
 export function App() {
   return (
@@ -9,7 +9,7 @@ export function App() {
       <Header />
       <Switch>
         <Route path="/feeds">
-          <Home />
+          <Feeds />
         </Route>
         <Route path="/article">
           <Article />
