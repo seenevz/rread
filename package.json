@@ -1,14 +1,15 @@
 {
   "name": "rss-reader",
   "version": "0.0.0",
+  "repository": "https://github.com/seenevz/rread",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "repo": "open https://github.com/seenevz/rread"
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.1",
-    "bulma": "^0.9.3",
     "preact": "^10.5.13",
     "react-router-dom": "^5.3.0"
   },

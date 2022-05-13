@@ -3,6 +3,7 @@ import { useHistory, useLocation, useRouteMatch } from "react-router";
 import { FeedsList, ParsedContentList } from "../types";
 import { getParsedFeedContent } from "../utils";
 import FeedsContainerRow from "./FeedsContainerRow";
+import { home } from "../styles/home.module.css";
 
 type FeedsContainerProps = {
   feeds: FeedsList;
@@ -28,7 +29,7 @@ export default function FeedsContainer({ feeds }: FeedsContainerProps) {
   }, [feeds]);
 
   return (
-    <section>
+    <main className={home}>
       {feedsContent.map(feed => {
         const routeVal = `${path}/${feed.id}`;
 
@@ -44,6 +45,6 @@ export default function FeedsContainer({ feeds }: FeedsContainerProps) {
           />
         );
       })}
-    </section>
+    </main>
   );
 }
