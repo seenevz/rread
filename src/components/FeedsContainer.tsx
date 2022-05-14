@@ -3,7 +3,9 @@ import { useHistory, useLocation, useRouteMatch } from "react-router";
 import { FeedsList, ParsedContentList } from "../types";
 import { getParsedFeedContent } from "../utils";
 import FeedsContainerRow from "./FeedsContainerRow";
-import { home } from "../styles/home.module.css";
+import styles from "../styles/home.module.css";
+
+const { home } = styles;
 
 type FeedsContainerProps = {
   feeds: FeedsList;

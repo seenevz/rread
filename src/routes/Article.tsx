@@ -1,7 +1,9 @@
-import { useEffect, useRef, useState } from "preact/hooks";
+import { Ref, useEffect, useRef, useState } from "preact/hooks";
 import { useHistory } from "react-router-dom";
 import { getSiteData } from "../utils";
-import { article } from "../styles/home.module.css";
+import styles from "../styles/home.module.css";
+
+const { article } = styles;
 
 type ArticleProps = {};
 const parser = new DOMParser();
@@ -34,5 +36,5 @@ export default function Article({}: ArticleProps) {
 
   doc && console.log(doc);
 
-  return <main class={article} ref={ref}></main>;
+  return <main className={article} ref={ref as Ref<HTMLDivElement>}></main>;
 }

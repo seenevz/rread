@@ -1,4 +1,6 @@
-import { addFeed, addForm } from "../styles/home.module.css";
+import styles from "../styles/home.module.css";
+
+const { addFeed, addForm } = styles;
 
 export default function AddFeed() {
   return (

@@ -1,10 +1,8 @@
 import { useHistory, useRouteMatch } from "react-router";
-import {
-  media,
-  mediaRow,
-  mediaTitle,
-} from "../styles/feedContainer.module.css";
+import styles from "../styles/feedContainer.module.css";
 import { ParsedContent } from "../types";
+
+const { media, mediaRow, mediaTitle } = styles;
 
 type FeedsContainerRowProps = {
   feedContent: ParsedContent;
@@ -22,8 +20,8 @@ export default function FeedsContainerRow({
 
   return (
     <>
-      <section class={media} onClick={() => toggleExpandedTab(match?.url)}>
-        <div class={mediaTitle}>
+      <section className={media} onClick={() => toggleExpandedTab(match?.url)}>
+        <div className={mediaTitle}>
           <h2>{contentInfo?.title}</h2>
           <h3>{contentInfo?.description}</h3>
         </div>
@@ -32,14 +30,14 @@ export default function FeedsContainerRow({
             contentItems.map(item => {
               return (
                 <li>
-                  <article key={Math.random()} class={mediaRow}>
-                    <div class="media-left">
-                      <p class="image is-16x16"></p>
+                  <article key={Math.random()} className={mediaRow}>
+                    <div className="media-left">
+                      <p className="image is-16x16"></p>
                     </div>
                     <div>
                       <a
                         onClick={e => {
-                          e.stopImmediatePropagation();
+                          (e as any).stopImmediatePropagation();
                           push("/article", { link: item?.link });
                         }}>
                         {item?.title}
