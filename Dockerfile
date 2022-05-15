@@ -13,10 +13,10 @@ run npm run build
 
 FROM joseluisq/static-web-server:2
 
-COPY from=build /app/dist /app
+COPY --from=build /app/dist /app
 
 EXPOSE 80
 
-CMD ["static-web-server", "--root /app"]
+CMD ["--root","/app","--security-headers"]
 
 
