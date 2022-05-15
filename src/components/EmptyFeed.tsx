@@ -6,7 +6,10 @@ export default function EmptyFeed() {
   return (
     <main className={emptyFeed}>
       <figure>
-        <img src={emptyImg} style={{ transform: "rotate(90deg)" }} />
+        <img
+          src={emptyImg}
+          style={{ transform: "rotate(90deg)", maxHeight: "50vh" }}
+        />
       </figure>
       <h2>It's a bit empty here...</h2>
       <h3>Add some feeds to start</h3>
