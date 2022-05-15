@@ -17,6 +17,6 @@ COPY --from=build /app/dist /app
 
 EXPOSE 8080
 
-CMD ["--root","/app","--security-headers", "--port", "8080"]
+CMD ["--root","/app","--security-headers", "--port", "8080", "--page-fallback", "index.html"]
 
 
