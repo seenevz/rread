@@ -1,16 +1,12 @@
-# fly.toml file generated for red-resonance-6502 on 2022-05-13T23:47:57+01:00
+# fly.toml file generated for rreader on 2022-05-15T01:08:47+01:00
 
-app = "red-resonance-6502"
+app = "rreader"
 
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
-[build]
-  builder = "heroku/buildpacks:20"
-
 [env]
-  PORT = "8080"
 
 [experimental]
   allowed_public_ports = []
