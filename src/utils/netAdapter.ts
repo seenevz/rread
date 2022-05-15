@@ -6,7 +6,7 @@ import { getDataFromXML } from ".";
 const myProxyFetch = (url: string): Promise<Response> => {
   try {
     return fetch(proxyUrl + url, {
-      headers: new Headers([["x-auth-token", proxyToken]]),
+      headers: new Headers([["x-auth-token", proxyToken as string]]),
     });
   } catch (error) {
     throw error;
