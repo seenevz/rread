@@ -1,4 +1,4 @@
-# fly.toml file generated for rreader on 2022-05-15T01:08:47+01:00
+# fly.toml file generated for rreader on 2022-05-15T22:56:28+01:00
 
 app = "rreader"
 
@@ -34,7 +34,7 @@ processes = []
     port = 443
 
   [[services.tcp_checks]]
-    grace_period = "1s"
+    grace_period = "10s"
     interval = "15s"
     restart_limit = 0
-    timeout = "2s"
+    timeout = "3s"
