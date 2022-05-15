@@ -15,8 +15,8 @@ FROM joseluisq/static-web-server:2
 
 COPY --from=build /app/dist /app
 
-EXPOSE 80
+EXPOSE 8080
 
-CMD ["--root","/app","--security-headers"]
+CMD ["--root","/app","--security-headers", "--port", "8080"]
 
 
