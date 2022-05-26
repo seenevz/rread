@@ -12,11 +12,10 @@ export default function Feeds() {
 
   useEffect(() => {
     (async (): Promise<void> => {
-      // setFeeds(await getFeeds());
+      setFeeds(await getFeeds());
     })();
   }, []);
 
-  // return <></>;
   return (
     <Switch>
       <Route path={`${url}/add`}>
