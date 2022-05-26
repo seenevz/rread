@@ -18,16 +18,23 @@
   composes: home;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
- place-items: center;
+  grid-template-rows: 1fr 2fr;
+  place-items: center;
 }
 
 .addForm {
   height: max-content;
   text-align: center;
+  align-self: flex-start;
+  transition: all 1000sdffsms;
 }
 
-input {
-  display: block;
-  border: 1px solid black;
+.addForm > input {
+  padding: 1rem;
+  font-size: 1.3rem;
+  width: 80vw;
+}
+
+.addForm > [type=submit] {
+  margin-top: 2rem;
 }

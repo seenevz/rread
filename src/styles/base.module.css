@@ -36,7 +36,6 @@ button:focus {
 }
 
 input {
-  border: none;
   background-color: transparent;
   font: inherit;
 }
@@ -80,4 +79,10 @@ body {
   grid-template-rows: 3rem 1fr;
   height: 100vh;
   overflow: hidden;
+}
+
+input {
+  font: inherit;
+  border: 1px solid black;
+  border-radius: 10px;
 }
