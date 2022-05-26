@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import rssIcon from "../assets/icons/rss-square-solid.svg";
 import styles from "../styles/header.module.css";
 
-const { navbar, hamburger, aside, asideOpen } = styles;
+const { navbar, hamburger, aside, asideClose } = styles;
 
 export default function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -29,7 +29,7 @@ export default function Header() {
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </button>
-      <aside className={`${aside} ${sidebarOpen && asideOpen}`}>
+      <aside className={`${aside} ${sidebarOpen ? "" : asideClose}`}>
         <ul>
           <li>
             <Link to="/feeds/add">Add a feed</Link>
