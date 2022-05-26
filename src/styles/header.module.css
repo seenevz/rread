@@ -10,11 +10,12 @@
 }
 
 .hamburger {
-  display: block;
+  display: grid;
   grid-column-start: 3;
   height: 100%;
   width: 2rem;
   z-index: 10;
+  align-content: space-around;
 }
 
 .open{
@@ -22,10 +23,9 @@
 }
 
 .hamburger > span  {
-    display: block;
-    height: 0.24rem;
-    background-color: black;
-    margin-top: 0.37rem;
+  display: block;
+  height: 0.14rem;
+  background-color: black;
 }
 
 .aside {
