@@ -16,9 +16,9 @@ Currently in development
 
 # Features TODO
 
+- [x] setup url navigation
+- [x] implement sidebar menu
+- [x] add new feed button
 - [ ] move storage to db
-- [ ] implement sidebar menu
-- [ ] add new feed button
 - [ ] remove feeds from list
-- [ ] setup url navigation
 - [ ] cloud backup
